@@ -1,0 +1,18 @@
+{
+  "name": "cyautopdf",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "allure-cypress": "^3.0.6",
+    "cypress": "^13.16.0"
+  },
+  "dependencies": {
+    "pdf-parse": "^1.1.1"
+  }
+}
