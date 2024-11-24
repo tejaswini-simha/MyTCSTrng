@@ -1,0 +1,95 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "I want to login into the site with valid data",
+    "line": 1,
+    "id": "i-want-to-login-into-the-site-with-valid-data",
+    "tags": [],
+    "uri": "LoginTest.feature",
+    "elements": [
+      {
+        "id": "i-want-to-login-into-the-site-with-valid-data;login-as-user-with-valid-password",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Login as user with valid password",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "I navigate to the website",
+            "result": {
+              "status": "passed",
+              "duration": 2278000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "username",
+                      "valid_password"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "admin",
+                      "admin"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "When ",
+            "line": 5,
+            "name": "I enter valid credentials",
+            "result": {
+              "status": "passed",
+              "duration": 475000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "user clicks on login button",
+            "result": {
+              "status": "passed",
+              "duration": 1247000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "login_page_header"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Login Successfully"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "validate the header of the page after login to be",
+            "result": {
+              "status": "passed",
+              "duration": 29000000
+            }
+          }
+        ],
+        "retried": null
+      }
+    ]
+  }
+]
