@@ -4,6 +4,7 @@ const { allureCypress } = require("allure-cypress/reporter");
 
 
 module.exports = defineConfig({
+  projectId: 't61r72',
   e2e: {
     setupNodeEvents(on, config) {
       allureCypress(on, config, {
