@@ -14,7 +14,8 @@ agent {
             steps {
                 dir('D:/Tejaswini/Work/MyLearning/My-Custom-Workspace') {  // Custom workspace for this stage
                 // Pull code from the Git repository configured in the Jenkins job
-                checkout scm
+                    checkout scm
+                }
             }
         }
 
@@ -22,8 +23,7 @@ agent {
             steps {
                 dir('D:/Tejaswini/Work/MyLearning/My-Custom-Workspace') {  // Custom workspace for this stage
                 // Run npm install to install dependencies
-                script {
-                    sh 'npm install'
+                  sh 'npm install'
                 }
             }
         }
@@ -32,7 +32,6 @@ agent {
             steps {
                 // Run Cypress tests
                 dir('D:/Tejaswini/Work/MyLearning/My-Custom-Workspace') {  // Custom workspace for this stage
-                script {
                     sh 'npm run cypress'
                 }
             }
