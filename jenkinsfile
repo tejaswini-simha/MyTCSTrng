@@ -41,7 +41,10 @@ agent any
         stage('Publish Allure Report') {
             steps {
                 // Publish the Allure report to Jenkins
-                    bat allure includeProperties: false, jdk: '', results: [$ALLURE_RESULTS]
+                    // bat allure includeProperties: false, jdk: '', results: [$ALLURE_RESULTS]
+                    bat """
+                    allure generate ${ALLURE_RESULTS}
+                    """
                 }
             }
     }
