@@ -1,7 +1,7 @@
 pipeline {
 agent {
         label 'master'  // Or specify any other label for the agent you want to run on
-        customWorkspace 'D:\Tejaswini\Work\MyLearning\My-Custom-Workspace'  // Define custom workspace path
+        customWorkspace 'D:/Tejaswini/Work/MyLearning/My-Custom-Workspace'  // Define custom workspace path
     }
 
     environment {
