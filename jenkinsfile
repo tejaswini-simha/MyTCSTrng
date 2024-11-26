@@ -50,7 +50,8 @@ agent {
             steps {
                 dir('D:/Tejaswini/Work/MyLearning/My-Custom-Workspace') {  // Custom workspace for this stage
                 // Publish the Allure report to Jenkins
-                allure includeProperties: false, jdk: '', results: [$ALLURE_RESULTS]
+                    allure includeProperties: false, jdk: '', results: [$ALLURE_RESULTS]
+                }
             }
         }
     }
