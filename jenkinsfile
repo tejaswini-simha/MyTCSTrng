@@ -9,30 +9,25 @@ agent any
     stages {
         stage('Checkout Source') {
             steps {
-                dir('D:/Tejaswini/Work/MyLearning/My-Custom-Git-Jenkins-Pipeline-Workspace') {  // Custom workspace for this stage
                 // Pull code from the Git repository configured in the Jenkins job
                     checkout scm
                 }
             }
-        }
 
         stage('Install Dependencies') {
             steps {
-                dir('D:/Tejaswini/Work/MyLearning/My-Custom-Git-Jenkins-Pipeline-Workspace') {  // Custom workspace for this stage
                 // Run npm install to install dependencies
                   sh 'npm install'
                 }
             }
-        }
+
 
         stage('Run Cypress Tests') {
             steps {
                 // Run Cypress tests
-                dir('D:/Tejaswini/Work/MyLearning/My-Custom-Git-Jenkins-Pipeline-Workspace') {  // Custom workspace for this stage
                     sh 'npm run cypress'
                 }
             }
-        }
 
         // stage('Generate Allure Report') {
         //     steps {
@@ -45,12 +40,10 @@ agent any
 
         stage('Publish Allure Report') {
             steps {
-                dir('D:/Tejaswini/Work/MyLearning/My-Custom-Git-Jenkins-Pipeline-Workspace') {  // Custom workspace for this stage
                 // Publish the Allure report to Jenkins
                     allure includeProperties: false, jdk: '', results: [$ALLURE_RESULTS]
                 }
             }
-        }
     }
 
     post {
