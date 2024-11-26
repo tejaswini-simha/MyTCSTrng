@@ -29,12 +29,14 @@ agent any
                 }
             }
 
-        stage('Generate Allure Report') {
-            steps {
-                // Generate the Allure report after Cypress test execution
-                bat 'npx allure generate $ALLURE_RESULTS --clean -o allure-report'
+        post {
+                always {
+                    allure includeProperties:
+                     false,
+                     jdk: '',
+                     results: [[path: './allure-results']]
+                }
             }
-        }
 
     }
 
