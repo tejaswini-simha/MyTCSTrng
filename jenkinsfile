@@ -1,0 +1,58 @@
+pipeline {
+    agent any
+
+    environment {
+        // Set the location of the Allure results folder if necessary
+        ALLURE_RESULTS = './allure-results'
+    }
+
+    stages {
+        stage('Checkout Source') {
+            steps {
+                // Pull code from the Git repository configured in the Jenkins job
+                checkout scm
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                // Run npm install to install dependencies
+                script {
+                    sh 'npm install'
+                }
+            }
+        }
+
+        stage('Run Cypress Tests') {
+            steps {
+                // Run Cypress tests
+                script {
+                    sh 'npm run cypress'
+                }
+            }
+        }
+
+        // stage('Generate Allure Report') {
+        //     steps {
+        //         // Generate the Allure report after Cypress test execution
+        //         script {
+        //             sh 'npx allure generate $ALLURE_RESULTS --clean -o allure-report'
+        //         }
+        //     }
+        // }
+
+        stage('Publish Allure Report') {
+            steps {
+                // Publish the Allure report to Jenkins
+                allure includeProperties: false, jdk: '', results: [$ALLURE_RESULTS]
+            }
+        }
+    }
+
+    post {
+        always {
+            // Clean up after the build, e.g., delete temporary files
+            cleanWs()
+        }
+    }
+}

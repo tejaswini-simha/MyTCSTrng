@@ -134,3 +134,7 @@ npm-debug.log*
 /dist
 /build
 /allure-results
+/screenshots
+/downloads
+/cucumber-json
+/reports
