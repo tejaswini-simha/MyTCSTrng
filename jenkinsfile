@@ -46,10 +46,10 @@ agent any
             }
     }
 
-    post {
-        always {
-            // Clean up after the build, e.g., delete temporary files
-            cleanWs()
-        }
-    }
+    // post {
+    //     always {
+    //         // Clean up after the build, e.g., delete temporary files
+    //         cleanWs()
+    //     }
+    // }
 }
