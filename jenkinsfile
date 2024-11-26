@@ -28,18 +28,16 @@ agent any
                     bat 'npx cypress run --headless --browser chrome --spec %SPEC_FILES% --record --key b35ccd18-8fef-4f78-84aa-44914c348083'
                 }
             }
-
-        post {
-                always {
-                    allure includeProperties:
-                     false,
-                     jdk: '',
-                     results: [[path: './allure-results']]
-                }
-            }
-
     }
 
+    post {
+            always {
+                allure includeProperties:
+                    false,
+                    jdk: '',
+                    results: [[path: './allure-results']]
+            }
+        }
     // post {
     //     always {
     //         // Clean up after the build, e.g., delete temporary files
