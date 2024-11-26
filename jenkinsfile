@@ -17,7 +17,7 @@ agent any
         stage('Install Dependencies') {
             steps {
                 // Run npm install to install dependencies
-                  sh 'npm install'
+                  bat 'npm install'
                 }
             }
 
