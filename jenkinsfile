@@ -1,8 +1,5 @@
 pipeline {
-agent {
-        label 'master'  // Or specify any other label for the agent you want to run on
-        // customWorkspace 'D:/Tejaswini/Work/MyLearning/My-Custom-Workspace'  // Define custom workspace path
-    }
+agent any
 
     environment {
         // Set the location of the Allure results folder if necessary
